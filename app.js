@@ -27,19 +27,28 @@ return counter;
 };
 
 btnSubmit.addEventListener("click", () => {
-  resultDiv.innerHTML = `
-        <p class="mt-4">
-          There are <span id="count" class="text-primary fw-bold fs-4">${vowelsCounter()}</span> vowels
-          in <span class="text-danger fw-bold fs-4" id="text">${inputText.value}</span>
-        </p>`
-  inputText.value = "";
+  if (!inputText.value) {
+    alert("Please enter a text")
+  } 
+  else {
+    resultDiv.innerHTML = `
+      <p class="mt-4">
+        There are <span id="count" class="text-primary fw-bold fs-4">${vowelsCounter()}</span> vowels
+        in <span class="text-danger fw-bold fs-4" id="text">${inputText.value}</span>
+      </p>`
+    inputText.value = "";
+    setTimeout(() => {
+      resultDiv.innerHTML = '';
+    }, 2000);
+  }
 });
 
 inputText.addEventListener("keydown", (e) => {
   if (e.keyCode === 13) {
     btnSubmit.click();
   }
-});
+  }
+);
 
 window.onload = () => {
   inputText.focus();
