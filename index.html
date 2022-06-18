@@ -12,21 +12,24 @@
     <title>VOWELS COUNTER</title>
   </head>
   <body>
-    <div class="container mt-5">
-      <div class="mb-3 d-flex">
+    <div
+      class="container mt-5 d-flex flex-column justify-content-between align-items-center"
+    >
+      <div class="mb-3 d-flex justify-content-center">
         <input
           type="text"
-          class="form-control mx-3"
+          class="form-control mx-3 w-100"
           id="text"
-          placeholder="Please Enter The Sentence..."
+          placeholder="Please Enter a Sentence..."
         />
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-danger">Submit</button>
       </div>
 
       <div class="result">
         <p>
-          Number of vowels in the text you entered: <span class="span"></span>
+          Number of vowels in the text you entered:
+          <span class="span text-primary fw-bold fs-4"></span>
         </p>
       </div>
     </div>
